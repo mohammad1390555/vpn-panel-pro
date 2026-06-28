@@ -1,0 +1,54 @@
+name = "vpn-panel-pro"
+main = "src/worker.js"
+compatibility_date = "2025-06-28"
+compatibility_flags = ["nodejs_compat"]
+
+# KV Namespaces - rename these after creating in Cloudflare dashboard
+[[kv_namespaces]]
+binding = "USERS"
+id = "YOUR_USERS_KV_ID"
+preview_id = "YOUR_USERS_KV_PREVIEW_ID"
+
+[[kv_namespaces]]
+binding = "PLANS"
+id = "YOUR_PLANS_KV_ID"
+preview_id = "YOUR_PLANS_KV_PREVIEW_ID"
+
+[[kv_namespaces]]
+binding = "TRANSACTIONS"
+id = "YOUR_TRANSACTIONS_KV_ID"
+preview_id = "YOUR_TRANSACTIONS_KV_PREVIEW_ID"
+
+[[kv_namespaces]]
+binding = "SETTINGS"
+id = "YOUR_SETTINGS_KV_ID"
+preview_id = "YOUR_SETTINGS_KV_PREVIEW_ID"
+
+[[kv_namespaces]]
+binding = "LOGS"
+id = "YOUR_LOGS_KV_ID"
+preview_id = "YOUR_LOGS_KV_PREVIEW_ID"
+
+# Environment Variables
+[vars]
+BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+BOT_USERNAME = "YOUR_BOT_USERNAME"
+ADMIN_IDS = "123456789,987654321"
+PANEL_DOMAIN = "panel.yourdomain.com"
+SUB_DOMAIN = "sub.yourdomain.com"
+SITE_NAME = "VPN Panel Pro"
+DEFAULT_LANG = "fa"
+
+# Routes (uncomment and set your domain)
+# [[routes]]
+# pattern = "panel.yourdomain.com/*"
+# zone_name = "yourdomain.com"
+
+# [[routes]]
+# pattern = "sub.yourdomain.com/*"
+# zone_name = "yourdomain.com"
+
+# Observability
+[observability]
+enabled = true
+head_sampling_rate = 1

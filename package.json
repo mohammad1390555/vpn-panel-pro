@@ -1,0 +1,18 @@
+{
+  "name": "vpn-panel-pro",
+  "version": "1.0.0",
+  "description": "پنل VPN حرفه‌ای با ربات تلگرام، پنل مدیریت وب و صفحه ساب لینک - Cloudflare Worker",
+  "main": "src/worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "kv:create": "wrangler kv:namespace create USERS && wrangler kv:namespace create PLANS && wrangler kv:namespace create TRANSACTIONS && wrangler kv:namespace create SETTINGS && wrangler kv:namespace create LOGS"
+  },
+  "keywords": ["vpn", "panel", "cloudflare-worker", "telegram-bot"],
+  "author": "Mamad",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.60.0"
+  }
+}
