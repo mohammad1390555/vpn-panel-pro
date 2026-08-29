@@ -1,3 +1,4 @@
+// ─── Made by Mohammad — github.com/mohammad1390555 ───
 // ─── Web Panel Renderer ─────────────────────────────────
 // Returns the admin panel HTML shell; React SPA mounts here
 

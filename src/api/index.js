@@ -1,3 +1,4 @@
+// ─── Made by Mohammad — github.com/mohammad1390555 ───
 // ─── API Router ────────────────────────────────────────────
 import { jsonResponse, errorResponse, successResponse, parseBody } from '../utils/response.js';
 import { logEvent } from '../utils/logger.js';

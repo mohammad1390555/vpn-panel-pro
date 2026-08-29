@@ -1,3 +1,4 @@
+// ─── Made by Mohammad — github.com/mohammad1390555 ───
 // ─── Response Utilities ────────────────────────────────────
 
 export function corsHeaders() {

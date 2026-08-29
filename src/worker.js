@@ -1,3 +1,4 @@
+// ─── Made by Mohammad — github.com/mohammad1390555 ───
 // ============================================================
 // 🚀 VPN Panel Pro — Cloudflare Worker (Main Entry Point)
 // ============================================================

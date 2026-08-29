@@ -1,3 +1,4 @@
+// ─── Made by Mohammad — github.com/mohammad1390555 ───
 // ─── Subscription Page Renderer ──────────────────────────
 // Beautiful subscription page with Ideas: #41 Config Preview, #42 Protocol Selector
 // #43 Usage Chart, #44 Download as File, #47 Connected Devices, #48 Reset Config

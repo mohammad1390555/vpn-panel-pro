@@ -1,3 +1,4 @@
+// ─── Made by Mohammad — github.com/mohammad1390555 ───
 // ─── Static Asset Loader ───────────────────────────────────
 // For production, assets are stored as KV blobs or served via Cloudflare Pages
 
