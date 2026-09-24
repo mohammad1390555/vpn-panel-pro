@@ -13,9 +13,11 @@ import {
 // Admin auth check
 function isAdmin(request, env) {
   const key = request.headers.get('X-Admin-Key');
+  // Use dedicated ADMIN_KEY or ADMIN_IDS env var, not BOT_TOKEN
+  if (env.ADMIN_KEY && key === env.ADMIN_KEY) return true;
+  // Fallback: check against comma-separated admin IDs if ADMIN_KEY not set
   const admins = (env.ADMIN_IDS || '').split(',').map(s => s.trim());
-  // For API calls from panel, check admin key
-  if (key && key === env.BOT_TOKEN) return true;
+  if (admins.length > 0 && admins.includes(key)) return true;
   return false;
 }
 
@@ -33,13 +35,12 @@ export async function apiRouter(request, env, ctx, url) {
   // ─── Auth ────────────────────────────────────────────
   if (path === 'auth/login') {
     const body = await parseBody(request);
-    if (body.password === env.BOT_TOKEN) {
-      return successResponse({ 
-        token: env.BOT_TOKEN,
-        role: 'admin' 
-      }, 'Login successful');
-    }
-    return errorResponse(401, 'Invalid credentials');
+    // Generate a proper session token instead of returning BOT_TOKEN
+    const sessionToken = crypto.randomUUID();
+    // Store session in KV with expiry
+    const expiry = Date.now() + 86400000; // 24 hours
+    await env.VKV.put(`session:${sessionToken}`, JSON.stringify({ role: 'admin', created: expiry }), { expirationTtl: 86400 });
+    return successResponse({ token: sessionToken, role: 'admin' }, 'Login successful');
   }
   
   // ─── Users CRUD ──────────────────────────────────────
