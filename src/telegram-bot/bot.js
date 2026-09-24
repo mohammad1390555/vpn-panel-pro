@@ -443,7 +443,7 @@ export async function handleTelegramWebhook(request, env, ctx) {
   if (request.method !== 'POST') return jsonResponse({ error: 'Method not allowed' }, 405);
 
   const body = await request.json();
-  console.log('TG Update:', JSON.stringify(body).slice(0, 200));
+  // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // console.log('TG Update:', JSON.stringify(body).slice(0, 200));
 
   // Handle callback query
   if (body.callback_query) {
