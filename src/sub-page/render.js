@@ -210,7 +210,7 @@ const SUB_HTML_FA = (user, configs, data) => `<!DOCTYPE html>
     </div>
 
     <!-- Empty state -->
-    ${configs.length === 0 ? `<div style="text-align:center;padding:40px;color:var(--text2)">هیچ کانفیگی یافت نشد</div>` : ''}
+    ${configs.length ====  ? `<div style="text-align:center;padding:40px;color:var(--text2)">هیچ کانفیگی یافت نشد</div>` : ''}
 
     <!-- Download Section (Idea #44 + #57) -->
     <div style="text-align:center;margin:24px 0">
